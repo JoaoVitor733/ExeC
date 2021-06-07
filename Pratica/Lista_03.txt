@@ -1,0 +1,327 @@
+Questão 01
+João Vitor Gomes Vieira
+
+ 
+ #include <iostream>
+ using namespace std;
+
+ int main(){
+
+    int Codigo, QuanSan, QuanBeb, San, Beb;
+    float Total = 0; 
+
+   cout << "\nSanduiche" ;
+   cout << "\nCodigo    Descricao      Preco Unitario";
+   cout << "\n100     Cachorro quente     1,10";
+   cout << "\n101      Bauru simples      1,30";
+   cout << "\n102      Bauru com ovo      1,50";
+   cout << "\n103        Hamburger        1,10";
+   cout << "\n104       Cheesburger       1,30\n"; 
+   cout << "\nBebida ";
+   cout << "\nCodigo    Descricao      Preco Unitario";
+   cout << "\n105      Refrigerante        1,00";
+   cout << "\n106        Suco              2,00 ";
+   cout << "\n107       Nescau             1,50\n";
+
+   cout << "\nDigite o codigo dos sanduiches e a quantidade desejada: ";
+   cin >>  San >> QuanSan;
+   cout << "\nDigite o codigo das bebidas e a quantidade desejada: "; 
+   cin >> Beb >> QuanBeb; 
+
+
+   switch (San){ 
+       case 100 : Total = (QuanSan*1.10);
+       break;
+       case 101 : Total = (QuanSan*1.30); 
+       break;
+       case 102 : Total = (QuanSan*1.50);
+       break;
+       case 103: Total = (QuanSan*1.10);
+       break;
+       case 104: Total = (QuanSan*1.30);
+       break;
+       default : cout << "\nCodigo INVALIDO!\n" ;
+    }
+
+    switch (Beb){
+      case 105 : Total = (QuanBeb*1.00) + Total;
+      break;
+      case 106 : Total = (QuanBeb*2.00) + Total;
+      break;
+      case 107 : Total = (QuanBeb*1.50) + Total;
+      break;
+      default:  cout << "\nCodigo INVALIDO!\n" ;
+    }
+
+    cout << "\nO total da compra R$" << Total;
+ }
+
+Questão 02
+João Vitor Gomes Vieira
+
+ 
+ #include <iostream>
+ using namespace std;
+
+
+ int main() {
+
+   int Numero, alg1, alg2, alg3, alg4, alg5, Soma ;
+
+   cout << "\nDigite um numero (INTEIRO e maior que 0 e com no maximo 5 algorismo: ";
+   cin >> Numero;
+
+   if ((Numero > 0 ) && (Numero < 99999)){
+      alg1 = Numero/10000;
+      Numero = Numero % 10000;
+    
+      alg2 = Numero/1000;
+      Numero = Numero % 1000;
+
+      alg3 = Numero/100;
+      Numero = Numero % 100;
+
+      alg4 = Numero/10;
+      Numero = Numero % 10;
+
+      alg5 = Numero;
+  
+     Soma = (alg1+alg2+alg3+alg4+alg5);
+     cout << "\n "<< alg1 << " + " << alg2 << " + " << alg3 << " + " << alg4 << " + " << alg5  << " = " << Soma;
+      
+   }else{
+     cout << "\nNumero Invalido! ";
+   }
+
+
+ }
+
+Questão 03
+João Vitor Gomes Vieira
+
+ 
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    float Distancia, Quanli,Consumo;
+
+    cout << "\nDigite a distancia em KM percorrida pelo carro:  ";
+    cin >> Distancia;
+    cout << "\nDigite a quantidade de gasolina gasta pelo carro no percurso: ";
+    cin >> Quanli;
+
+    Consumo = (Distancia/Quanli);
+
+    if(Consumo < 8){
+      cout << "\nVenda o carro!!";
+    }else{
+      if((Consumo >= 8) && (Consumo <= 12)){
+        cout << "\nEconomico! ";
+      }else{
+        cout << "\nSuper economico!";
+      }
+    }
+
+}
+
+Questão 04
+João Vitor Gomes Vieira
+
+ 
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int X,Y,Z;
+
+    cout << "\nDigite tres numeros (INTEIROS): ";
+
+    cin >> X >> Y >> Z;
+
+    if ((X == Y) && (Y == Z)) {
+        cout << "\nTodos os numeros sao iguais";
+    }else{
+        if((X != Y) && (Y != Z) && (X != Z){
+           cout << "\nTodos os numeros sao diferentes";
+       }else{
+            
+             cout << "\nApenas dois numeros sao iguais";
+         
+        }
+     }
+}
+
+Questão 05
+João Vitor Gomes Vieira
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(){
+
+   int A, B, C;
+   float Delta, X, X1, X2 ;
+
+   cout << "\nDigite os valores de A, B e C: ";
+   cin >> A >> B >> C; 
+
+   if (A != 0){
+      Delta = ((B*B) - (4*A*C));
+
+        if (Delta == 0){
+             X = ((-1)*B + sqrt(Delta))/(2*A);
+             cout << "\nO valor de X e " << X;
+        }else{
+
+           if(Delta > 0){
+               X1  = ((-1)*B + sqrt(Delta))/ (2*A);
+               X2 = ((-1)*B - sqrt(Delta))/ (2*A);
+               cout << "Duas raizes reais "<< X1 << " e " << X2 ;
+
+           }else{
+              cout << "\nNao tem raizes! ";
+         }
+       }
+   }else{
+     cout << "\nNao e uma equacao do segundo grau! ";
+   }
+}
+Questão 06
+João Vitor Gomes Vieira
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+  int Idade;
+
+  cout << "\nDigite sua idade: ";
+  cin >> Idade;
+
+  if (Idade >= 18 ){
+    cout << "\nVoce pode tirar sua carteira de habilitacao!! ";
+  }else{
+    Idade = (18 - Idade);
+    cout << "\nAinda resta " << Idade << " anos para tirar a sua carteira!!";
+  }
+}
+Questão 07
+João Vitor Gomes Vieira
+
+ 
+
+#include <iostream>
+using namespace std;
+
+int main () {
+
+    int Numero;
+
+    cout << "Digite um numero (INTEIRO): ";
+    cin >> Numero;
+
+    if (Numero % 2 == 0){
+       cout << "\nNumero digitado e PAR!!\n";
+       if(Numero % 10 == 0 ){
+         cout << "E multiplo de 10!!";
+       }
+    }else{
+        cout << "\nNumero digitado e IMPAR!!\n";
+        if (Numero % 5 == 0){
+          cout << "E divisivel por 5 !!";
+        }
+    }
+} 
+
+Questão 08
+João Vitor Gomes Vieira
+
+ 
+#include <iostream>
+using namespace std;
+
+int main (){
+ 
+   float Compra, ValorParcelas;
+   int QuantParce;
+
+   cout << "\nDigite o valor total da compra: " ;
+   cin >> Compra;
+   cout << "\nDigite o valor das parcelas: " ;
+   cin >> ValorParcelas;
+   cout << "\nDigite as quantidades das parcelas: " ;
+   cin >> QuantParce;
+
+   if (Compra/QuantParce == ValorParcelas){
+     cout << "\nO parcelamento foi sem juros!!";
+   }else{
+     cout << "\nO parcelamento foi com juros!!";
+   }
+
+}
+
+Questão 09
+João Vitor Gomes Vieira
+
+ 
+ using namespace std;
+
+ int main (){
+
+     int Dia;
+
+     cout << "Digite um dia da semana com DOMINGO sendo [1] e SABADO [7]: "; 
+     cin >> Dia;
+
+    if ((Dia >= 2) && (Dia <= 6 )){
+         cout << "E dia util!! ";
+     }else{
+          if ((Dia == 1) || (Dia == 7)){
+              cout << "E fim de semana!!";
+          }else{
+               cout << "Dia INVALIDO!!";
+          }
+      } 
+    
+ }
+
+
+Questão 10
+João Vitor Gomes Vieira
+
+ 
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int Idade, Total;
+
+    cout << "Digite sua idade: ";
+    cin >> Idade;
+
+    if (Idade >= 60){
+        Total = (100+130);
+    }else{
+         if ((Idade >= 31) && (Idade < 60)){
+              Total = (100+95);
+         }else{
+             if ((Idade > 10) && (Idade <= 30)){
+                 Total = (100+50);
+             }else{
+                    Total = (100+80);
+             }   
+         }
+      }  
+    cout << "O valor a ser pago pelo plano: R$" << Total;
+}
+
+
+
+

@@ -1,0 +1,372 @@
+Questão 01
+
+#include <iostream>
+using namespace std;
+
+int main() {
+      float X,Y,Z;
+      cout << "Digite tres valores para ser o comprimento de X,Y,Z: ";
+      cin >> X  >> Y >> Z;
+       
+      if((X+Y>Z) && (X+Z>Y) && (Y+Z>X)){
+         cout << "E um triangulo: ";
+         
+           if((X == Y) && (Y == Z)){
+                cout << "Equilatrio";
+           }else{
+               if ((X == Z) || (Z == Y) || (Y == X)){
+                   cout << "Isoceles"; 
+               }else{
+                   cout << "Escaleno";
+               } 
+           }   
+      }else{
+         cout << "Nao e um triangulo ";
+      } 
+   
+}
+
+Questão 02
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int Num;  
+    cout << "Digite um numero:  ";
+    cin >> Num;
+
+    if (Num % 2 != 0){
+        cout << "Numero digitado e IMPAR ";
+          if (Num > 0){
+             cout << "e POSITIVO";   
+          }else{
+              cout << "e NEGATIVO";  
+             }             
+    }else{
+        cout << "Numero digitado e PAR ";
+        if( Num > 100) {
+            cout << "e Maior que 100";
+        }else{ 
+             cout << "e Menor que 100";
+        }
+        
+    }
+}
+
+Questão 03
+
+#include <iostream>
+using namespace std ;
+
+ int main() {
+      float altura, PesoIdeal, NovaAltura;
+      char Sexo;
+ 
+      cout << "Digite sua altura: ";
+      cin >> altura;
+      cout << "Digite seu sexo [M] para masculino e [F] para feminino: ";
+      cin >> Sexo;
+
+      if(altura > 100){
+          NovaAltura =  altura/100;     
+      }else{
+          NovaAltura = altura; 
+      }
+          
+      switch (Sexo){
+      case 'M' :  
+             PesoIdeal = (72.7 * NovaAltura) - 58 ;
+             cout << "Seu peso ideal: "  << PesoIdeal;
+          break;
+      case 'F':
+               PesoIdeal = (62.1 * NovaAltura) - 44.7  ;
+             cout << "Seu peso ideal: "  << PesoIdeal;
+           break;
+      default:
+             cout << "Erro digite novamente! ";
+          break;
+      }
+        
+ }
+Questão 04
+
+#include <iostream>
+using namespace std;
+
+int main(){ 
+      int AnoCarro;
+      float  PrecoCarro, Taxa;
+
+      cout << "Digite o ano de fabricacao de seu carro: "; 
+      cin >> AnoCarro;
+      cout << "Digite o preco de seu carro:  ";
+      cin >> PrecoCarro;
+
+      if (AnoCarro < 1990){
+           Taxa = (0.01*PrecoCarro);
+           cout << "O imposto a ser pago: R$" << Taxa ;
+      }else{
+          Taxa = (0.015*PrecoCarro);
+          cout << "O imposto a ser pago: R$" << Taxa; 
+      }
+} 
+
+Questão 05
+
+#include <iostream>
+using namespace std;
+
+int main(){
+       int CodigoCargo; 
+       float Salario, NovoSalario, Aumento;
+
+       cout << "Digite seu salario: ";   
+       cin >>  Salario;
+       cout << "Digite o codigo de seu cargo: ";
+       cin  >> CodigoCargo;
+
+       switch (CodigoCargo) {
+       case 101:
+             NovoSalario = (Salario*0.1+Salario);
+             Aumento = (NovoSalario - Salario);
+             cout << "Seu salario era de R$" << Salario  << " Agora passa ser R$" << NovoSalario << " Tendo um  aumento de R$" << Aumento;
+           break;
+        case 102:
+             NovoSalario = (Salario*0.2+Salario);
+             Aumento = (NovoSalario - Salario);
+             cout << "Seu salario era de R$" << Salario  << " Agora passa ser R$" << NovoSalario << " Tendo um  aumento de R$" << Aumento;
+           break;
+        case 103:
+             NovoSalario = (Salario*0.3+Salario);
+             Aumento = (NovoSalario - Salario);
+             cout << "Seu salario era de R$" << Salario  << " Agora passa ser R$" << NovoSalario << " Tendo um  aumento de R$" << Aumento;
+           break;   
+       default:
+             NovoSalario = (Salario*0.4+Salario);
+             Aumento = (NovoSalario - Salario);
+             cout << "Seu salario era de R$" << Salario  << " Agora passa ser R$" << NovoSalario << " Tendo um  aumento de R$" << Aumento;
+           break;
+       }
+}
+
+Questão 06
+
+#include <iostream>
+using namespace std;
+
+int main(){
+       int Nivel,HorasAulas;
+       float Salario;
+
+
+      cout << "Quantas horas/aulas sao dada em um mes: ";
+      cin >> HorasAulas;
+      cout << "Digite o seu nivel [1] OU [2] OU [3] : ";
+      cin >> Nivel;
+      
+     
+      switch (Nivel){
+      case 1 :
+           
+            Salario = (HorasAulas*12 *30);
+            cout << "Seu salario e de R$ " << Salario;
+
+            break;
+      case 2 :
+
+            Salario = (HorasAulas*17 *30);
+            cout << "Seu salario e de R$ " << Salario;
+
+            break;
+      case 3 :
+             
+            Salario = (HorasAulas*25 *30);
+            cout << "Seu salario e de R$ " << Salario;
+
+            break;            
+      
+      default:
+
+          cout << "Erro, digite novamente!!";
+          
+            break;
+      }
+}
+
+Questão 07
+
+#include <iostream>
+using namespace std;
+
+int main(){
+     int Numero,N;
+     char Letra;
+
+     cout << "Digite um numero (INTEIRO): "; 
+     cin >> Numero;
+     cout << "Digite a letra [A] para antecessores ou [S] para sucessores: ";
+     cin >> Letra;
+
+     N = Numero; 
+     
+     switch (Letra){
+     case 'A' :
+          cout <<  "\n" << (N-1) << "," << (N-2) << "," << (N-3) << "," << (N-4) << "," << (N-5) << "," << (N-6) << "," << (N-7) << "," << (N-8) << "," << (N-9) << "," << (N-10) <<  "\n" ;
+          cout << "\nA soma de todos numeros e = " <<  ((N-1)+(N-2)+(N-3)+(N-4)+(N-5)+(N-6)+(N-7)+(N-8)+(N-9)+(N-10)); 
+         break;
+    case 'S' :
+            cout <<  "\n" << (N+1) << "," << (N+2) << "," << (N+3) << "," << (N+4) << "," << (N+5) << "," << (N+6) << "," << (N+7) << "," << (N+8) << "," << (N+9) << "," << (N+10) <<  "\n" ;
+          cout << "\nA soma de todos numeros e = " <<  ((N+1)+(N+2)+(N+3)+(N+4)+(N+5)+(N+6)+(N+7)+(N+8)+(N+9)+(N+10)); 
+         break;
+
+     default:
+            cout << "Letra errada. Digite novamente!!";
+         break;
+     }
+
+}
+
+Questão 08
+
+#include <iostream>
+using namespace std;
+
+int main(){
+     int Num1, Num2, Num3;
+     char Ordem;
+
+     cout << "Digite 3 numeros (INTEIRO)" ;
+     cin >> Num1 >> Num2 >> Num3;
+     cout << "Digite a ordem [C] para crescente e [D] para decrescente: " ;
+     cin >> Ordem;
+
+     switch (Ordem) {
+     case 'C':
+           if((Num3 > Num2 ) && (Num2 > Num1)){
+                cout << Num1 << " " << Num2  << " " << Num3;
+           }else{    
+            
+              if((Num1 > Num2) && (Num2 < Num3) && (Num1 < Num3)){
+                   cout << Num2 << " " << Num1  << " " << Num3;
+
+              }else{
+                  if((Num3 > Num2 ) && (Num2 < Num1)){
+                       cout << Num2 << " " << Num3  << " " << Num1;
+                
+                  }else{
+                       if((Num3 < Num2 ) && (Num2 > Num1) && (Num1 < Num3)){
+                             cout << Num1 << " " << Num3 << " " << Num2;
+
+                       }else{
+                           if((Num3 < Num2 ) && (Num2 > Num1) && (Num3 < Num1)){
+                                cout << Num3 << " " << Num1 << " " << Num2; 
+
+                           }else{
+                 
+                                if((Num3 < Num2 ) && (Num2 < Num1)){
+                                       cout << Num3 << " " << Num2 << " " << Num1;
+
+                           } 
+                        } 
+                      }  
+                   }
+                }
+             }
+          break;
+      case 'D':
+           if((Num3 > Num2 ) && (Num2 > Num1)){
+                cout << Num3 << " " << Num2  << " " << Num1;
+           }else{    
+            
+              if((Num1 > Num2) && (Num2 < Num3) && (Num1 < Num3)){
+                   cout << Num3 << " " << Num1  << " " << Num2;
+
+              }else{
+                  if((Num3 > Num2 ) && (Num2 < Num1)){
+                       cout << Num1 << " " << Num3  << " " << Num2;
+                
+                  }else{
+                       if((Num3 < Num2 ) && (Num2 > Num1) && (Num1 < Num3)){
+                             cout << Num2 << " " << Num3 << " " << Num1;
+
+                       }else{
+                           if((Num3 < Num2 ) && (Num2 > Num1) && (Num3 < Num1)){
+                                cout << Num2 << " " << Num1 << " " << Num3; 
+
+                           }else{
+                 
+                                if((Num3 < Num2 ) && (Num2 < Num1)){
+                                       cout << Num1 << " " << Num2 << " " << Num3;
+
+                           } 
+                        } 
+                      }  
+                   }
+                }
+             }
+          break;     
+     
+     default:
+             cout << "ERRO";
+          break;
+     }
+
+
+
+} 
+Questão 09
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    float TrabaLabo, AvaSeme, ExaFi, Media;
+
+    cout << "Qual foi sua nota no trabalho de laboratorio: ";
+    cin >> TrabaLabo;
+    cout << "Qual foi sua nota na avaliacao semestral: ";
+    cin >> AvaSeme;
+    cout << "Qual foi sua nota no exame final: ";
+    cin >> ExaFi;
+
+    TrabaLabo = (TrabaLabo * 2);  
+    AvaSeme = (AvaSeme * 3);
+    ExaFi = (ExaFi * 5);
+    Media = (TrabaLabo+AvaSeme+ExaFi)/10;
+
+    
+     if  ((Media > 0) && (Media < 2.9)){
+         cout << "Aluno(a) REPROVADO!! "; 
+    }else{ 
+        if (Media < 4.9){
+           cout << "Aluno(a) em RECUPERACAO!! ";
+        }else{
+           cout << "Aluno(a)  APROVADO!! ";
+        }
+        
+    }
+      
+}
+
+Questão 10
+
+#include <iostream>
+using namespace std;
+
+int main(){
+     int  Idade;
+     float TemServ;
+
+     cout << "Digite sua idade: ";
+     cin >> Idade;
+     cout << "Digite seu tempo de servico: ";
+     cin >> TemServ;
+
+      if((Idade >= 60) && (TemServ >= 25) || ((Idade > 65) || (TemServ > 30))){
+         cout << "Pode se aposentar!!"; 
+     }else{
+          cout << "Pode se aposentar!!"; 
+     }
+} 
